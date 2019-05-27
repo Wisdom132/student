@@ -10,10 +10,8 @@
       <a href="#name"><span class="white-text name">John Doe</span></a>
       <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
     </div></li>
-    <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-    <li><a href="#!">Second Link</a></li>
-    <li><div class="divider"></div></li>
-    <li><a class="subheader">Subheader</a></li>
+    <li><a href="#" class="waves-effect">All Student</a></li>
+    <li><a href="#" class="waves-effect">All Staff</a></li>
     <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
   </ul>
   <section class="main">
@@ -27,19 +25,19 @@
               <th>Gender</th>
               <th>Phone</th>
               <th>Email</th>
-              <th>Action</th>
+              <th>View</th>
 
           </tr>
         </thead>
 
-        <tbody v-for="student in students" :key="student.id"  :student="student">
+        <tbody v-for="student in students" :key="student.id" :student="student">
           <tr>
-            <td>{{student.id}}</td>
+            <td>{{student.first_name}}</td>
             <td>{{student.last_name}}</td>
             <td>male</td>
             <td>{{student.phone}}</td>
             <td>{{student.email}}</td>
-            <td><router-link :to="`/profile/{{student.id}}`" class="btn blue darken-3" >View</router-link></td>
+            <td><router-link :to="`/profile/${student.id}`" class="btn blue darken-3" >View</router-link></td>
           </tr>
         </tbody>
       </table>
@@ -61,14 +59,18 @@ export default {
   computed: {
     ...mapState([
       'students'
-    ])
+    ]),
+    
   },
   methods: {
 
   },
   components: {
     
-  }
+  },
+  //  created() {
+  //   this.$route.params.id; // prints value of :id
+  // },
 }
 </script>
 <style>

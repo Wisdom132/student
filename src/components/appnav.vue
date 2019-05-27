@@ -6,7 +6,7 @@
      <router-link to="/"><a class="brand-logo">Logo</a></router-link> 
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li> <router-link to="admin">Admin</router-link>></li>
+        <li> <router-link to="admin">Admin</router-link></li>
         <li><router-link class="waves-effect waves-light btn blue darken-4 z-depth-4" to="/">Add Student</router-link></li>
       </ul>
     </div>
